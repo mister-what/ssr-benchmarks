@@ -5,7 +5,7 @@
     "bench": "NODE_ENV=production node dist/index.js"
   },
   "devDependencies": {
-    "ejs": "^3.0.1"
+    "ejs": "^3.1.6"
   },
   "dependencies": {
     "node-stdev": "^1.0.1"

@@ -8,7 +8,7 @@ export default [
     input: ["index.js"],
     output: {
       dir: "dist",
-      format: "cjs"
+      format: "cjs",
     },
     plugins: [
       del({ targets: "dist/*" }),
@@ -18,8 +18,8 @@ export default [
         dev: false,
         immutable: true,
         hydratable: true,
-        generate: "ssr"
-      })
+        generate: "ssr",
+      }),
     ],
     external: [
       "fs",
@@ -33,7 +33,7 @@ export default [
       "net",
       "events",
       "stream",
-      "string_decoder"
-    ]
-  }
+      "string_decoder",
+    ],
+  },
 ];

@@ -50,7 +50,7 @@ const benchmark = async () => {
   }
 
   console.info("================ RESULT ================");
-  const durations = time.map(t => (t[0] + t[1] / 1e9) * 1e3);
+  const durations = time.map((t) => (t[0] + t[1] / 1e9) * 1e3);
 
   durations.forEach((d, i) => {
     console.info(`Run ${i} took `, d, "ms");
@@ -70,7 +70,7 @@ const benchmark = async () => {
     JSON.stringify({
       name: methodName,
       average: durations.reduce((a, b) => a + b) / durations.length,
-      stdev: require("node-stdev").population(durations)
+      stdev: require("node-stdev").population(durations),
     })
   );
 };

@@ -1,11 +1,13 @@
 {
   "name": "ssr-benchmarks",
+  "private": true,
   "version": "0.0.1",
   "description": "Repo to test performance of various SSR approaches",
   "main": "index.js",
   "scripts": {
     "build:all": "pnpm run build --r",
-    "bench:all": "node bench.js && node compile.js > result.md"
+    "bench:all": "node bench.js && node compile.js > result.md",
+    "prettier": "prettier --write methods/**/*.{js,jsx,json}"
   },
   "keywords": [
     "ssr",
@@ -16,6 +18,10 @@
   "author": "Jacky Efendi",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^3.0.0"
-  }
+    "chalk": "^4.1.0",
+    "prettier": "2.2.1"
+  },
+  "workspaces": [
+    "./methods/*"
+  ]
 }

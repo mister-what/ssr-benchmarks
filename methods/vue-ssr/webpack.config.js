@@ -18,7 +18,7 @@ module.exports = merge(baseConfig, {
 
   // This tells the server bundle to use Node-style exports
   output: {
-    libraryTarget: "commonjs2"
+    libraryTarget: "commonjs2",
   },
 
   // https://webpack.js.org/configuration/externals/#function
@@ -29,7 +29,7 @@ module.exports = merge(baseConfig, {
     // do not externalize dependencies that need to be processed by webpack.
     // you can add more file types here e.g. raw *.vue files
     // you should also whitelist deps that modifies `global` (e.g. polyfills)
-    whitelist: /\.css$/
+    whitelist: /\.css$/,
   }),
 
   mode: "production",
@@ -39,6 +39,6 @@ module.exports = merge(baseConfig, {
     // into a single JSON file. The default file name will be
     // `vue-ssr-server-bundle.json`
     // new VueSSRServerPlugin(),
-    new VueLoaderPlugin()
-  ]
+    new VueLoaderPlugin(),
+  ],
 });

@@ -1,12 +1,10 @@
 const { html, renderToString } = require("@popeindustries/lit-html-server");
 
-const methodName = 'lithtml-ssr';
+const methodName = "lithtml-ssr";
 
 const RecursiveDivs = ({ depth = 1, breadth = 1 }) => {
   if (depth <= 0) {
-    return html`
-      <div>abcdefghij</div>
-    `;
+    return html` <div>abcdefghij</div> `;
   }
 
   let children = [];
@@ -43,7 +41,9 @@ const benchmark = async () => {
     const start = process.hrtime();
 
     // this renders around 64472 divs
-    const markup = await renderToString(RecursiveDivs({ depth: 5, breadth: 11 }));
+    const markup = await renderToString(
+      RecursiveDivs({ depth: 5, breadth: 11 })
+    );
 
     time.push(process.hrtime(start));
 
@@ -51,7 +51,7 @@ const benchmark = async () => {
   }
 
   console.info("================ RESULT ================");
-  const durations = time.map(t => (t[0] + t[1] / 1e9) * 1e3);
+  const durations = time.map((t) => (t[0] + t[1] / 1e9) * 1e3);
 
   durations.forEach((d, i) => {
     console.info(`Run ${i} took `, d, "ms");
@@ -66,11 +66,14 @@ const benchmark = async () => {
   );
   console.info("Stdev is:", require("node-stdev").population(durations), "ms");
 
-  require('fs').writeFileSync("./dist/result.json", JSON.stringify({
-    name: methodName,
-    average: durations.reduce((a, b) => a + b) / durations.length,
-    stdev: require("node-stdev").population(durations),
-  }));
+  require("fs").writeFileSync(
+    "./dist/result.json",
+    JSON.stringify({
+      name: methodName,
+      average: durations.reduce((a, b) => a + b) / durations.length,
+      stdev: require("node-stdev").population(durations),
+    })
+  );
 };
 
 (async () => {

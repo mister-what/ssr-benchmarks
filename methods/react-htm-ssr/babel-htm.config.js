@@ -9,9 +9,9 @@ module.exports = {
           // the module to import:
           module: "htm/react",
           // a named export to use from that module:
-          export: "html"
-        }
-      }
+          export: "html",
+        },
+      },
     ],
   ].filter(Boolean),
 };

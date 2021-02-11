@@ -12,38 +12,38 @@ module.exports = {
   },
   resolve: {
     alias: {
-      public: path.resolve(__dirname, "../public")
-    }
+      public: path.resolve(__dirname, "../public"),
+    },
   },
   module: {
     noParse: /es6-promise\.js$/,
-    rules: [ 
+    rules: [
       {
         test: /\.vue$/,
         loader: "vue-loader",
-        options: vueConfig
+        options: vueConfig,
       },
       {
         test: /\.js$/,
         loader: "babel-loader",
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: "url-loader",
         options: {
           limit: 10000,
-          name: "[name].[ext]?[hash]"
-        }
+          name: "[name].[ext]?[hash]",
+        },
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: "css-loader?minimize",
-          fallback: "vue-style-loader"
-        })
-      }
-    ]
+          fallback: "vue-style-loader",
+        }),
+      },
+    ],
   },
   // plugins: [
   //   new ExtractTextPlugin({

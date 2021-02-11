@@ -1,10 +1,6 @@
-module.exports =  {
+const { presetEnv } = require("../babel.config-fragments");
+
+module.exports = {
   babelrc: false,
-  presets: [
-    [
-      '@babel/preset-env',
-      { modules: 'commonjs', useBuiltIns: 'entry', corejs: '2', exclude: ['es6.promise', 'es7.promise.finally'] },
-    ],
-    'preact',
-  ],
+  presets: [presetEnv, "preact"],
 };
