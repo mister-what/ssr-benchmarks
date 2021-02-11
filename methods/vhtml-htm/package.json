@@ -1,8 +1,9 @@
 {
   "name": "vhtml-htm",
+  "version": "1.0.0",
   "scripts": {
-    "build": "babel index.jsx -d dist --extensions '.js,.jsx' --config-file ./babel-htm.config.js && babel dist/index.js -d dist --extensions '.js,.jsx'",
-    "bench": "NODE_ENV=production node dist/index.js"
+    "build": "NODE_ENV=production babel index.jsx -d dist --extensions '.js,.jsx'",
+    "bench": "NODE_ENV=production benchwalk -n 'vhtml-htm only' dist/index.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.13",
@@ -18,9 +19,11 @@
     "babel-plugin-transform-jsx-to-htm": "^2.0.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.1",
-    "htm": "^3.0.4"
+    "htm": "^3.0.4",
+    "ssr-benchmark-runner": "1.0.0"
   },
   "dependencies": {
+    "core-js": "^3.8.3",
     "node-stdev": "^1.0.1",
     "vhtml": "^2.2.0"
   }

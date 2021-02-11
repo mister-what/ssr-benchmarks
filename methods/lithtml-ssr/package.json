@@ -1,5 +1,6 @@
 {
   "name": "lithtml-ssr",
+  "version": "1.0.0",
   "scripts": {
     "build": "babel index.js -d dist --extensions '.js'",
     "bench": "NODE_ENV=production node dist/index.js"
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "@popeindustries/lit-html-server": "^2.0.0",
+    "core-js": "^3.8.3",
     "node-stdev": "^1.0.1"
   }
 }

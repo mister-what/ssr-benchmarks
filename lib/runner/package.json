@@ -1,0 +1,21 @@
+{
+  "name": "ssr-benchmark-runner",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "bin": {
+    "benchwalk": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "babel -d dist src",
+    "prepare": "babel -d dist src"
+  },
+  "dependencies": {
+    "benny": "^3.6.15",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "7.12.13"
+  }
+}

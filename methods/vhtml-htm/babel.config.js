@@ -6,5 +6,13 @@ module.exports = {
     presetEnv,
     ["@babel/preset-react", { development: false, useBuiltIns: true }],
   ],
-  plugins: defaultPlugins,
+  plugins: [
+    ...defaultPlugins,
+    [
+      "babel-plugin-transform-jsx-to-htm",
+      {
+        tag: "html",
+      },
+    ],
+  ],
 };

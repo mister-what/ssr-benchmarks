@@ -5,8 +5,8 @@
   "description": "Repo to test performance of various SSR approaches",
   "main": "index.js",
   "scripts": {
-    "build:all": "pnpm run build --r",
-    "bench:all": "node bench.js && node compile.js > result.md",
+    "build": "yarn workspaces run build",
+    "benchwalk": "NODE_ENV=production benchwalk --suite-name 'ssr rendering' methods/react-ssr/dist/index.js methods/svelte-ssr/dist/index.js methods/vanilla-function/dist/index.js methods/vhtml/dist/index.js methods/vhtml-htm/dist/index.js",
     "prettier": "prettier --write methods/**/*.{js,jsx,json}"
   },
   "keywords": [
@@ -18,10 +18,12 @@
   "author": "Jacky Efendi",
   "license": "MIT",
   "dependencies": {
+    "ssr-benchmark-runner": "1.0.0",
     "chalk": "^4.1.0",
     "prettier": "2.2.1"
   },
   "workspaces": [
-    "./methods/*"
+    "./methods/*",
+    "./lib/*"
   ]
 }

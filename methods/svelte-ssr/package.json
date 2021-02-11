@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "simple implementation of svelte-ssr",
   "scripts": {
-    "build": "rollup -c",
-    "bench": "NODE_ENV=production node dist/index.js"
+    "build": "NODE_ENV=production rollup -c",
+    "bench": "NODE_ENV=production benchwalk -n 'svelte only' ./dist/index.js"
   },
   "author": "Jacky Efendi",
   "license": "MIT",
@@ -16,9 +16,11 @@
     "node-stdev": "^1.0.1",
     "rollup": "^2.38.5",
     "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-svelte": "^7.1.0"
+    "rollup-plugin-svelte": "^7.1.0",
+    "ssr-benchmark-runner": "1.0.0"
   },
   "dependencies": {
+    "core-js": "^3.8.3",
     "svelte": "^3.32.3"
   }
 }

@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const vueConfig = require("./vue.loader.config");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const { presetEnv } = require("../babel.config-fragments");
 
 module.exports = {
   devtool: false,
@@ -27,6 +28,9 @@ module.exports = {
         test: /\.js$/,
         loader: "babel-loader",
         exclude: /node_modules/,
+        options: {
+          presets: [[presetEnv[0], { ...presetEnv[1], modules: false }]],
+        },
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

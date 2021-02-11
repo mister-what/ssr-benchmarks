@@ -1,5 +1,6 @@
 {
   "name": "react-esx-ssr",
+  "version": "1.0.0",
   "scripts": {
     "build": "babel index.jsx -d dist --extensions '.js,.jsx'",
     "bench": "NODE_ENV=production node dist/index.js"
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "babel-plugin-esx-ssr": "^1.0.0",
+    "core-js": "^3.8.3",
     "esx": "^2.3.3",
     "node-stdev": "^1.0.1"
   }

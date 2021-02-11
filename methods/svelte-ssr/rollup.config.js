@@ -15,10 +15,12 @@ export default [
       commonjs(),
       resolve(),
       svelte({
-        dev: false,
-        immutable: true,
-        hydratable: true,
-        generate: "ssr",
+        compilerOptions: {
+          dev: false,
+          immutable: true,
+          hydratable: true,
+          generate: "ssr",
+        },
       }),
     ],
     external: [

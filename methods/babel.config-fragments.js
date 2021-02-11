@@ -2,9 +2,8 @@ module.exports.presetEnv = [
   "@babel/preset-env",
   {
     modules: "commonjs",
-    useBuiltIns: "entry",
-    corejs: "2",
-    exclude: ["es6.promise", "es7.promise.finally"],
+    useBuiltIns: "usage",
+    corejs: "3",
     shippedProposals: true,
     targets: { node: "current" },
   },

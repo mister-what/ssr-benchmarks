@@ -1,5 +1,6 @@
 {
   "name": "preact-ssr",
+  "version": "1.0.0",
   "scripts": {
     "build": "babel index.jsx -d dist --extensions '.js,.jsx'",
     "bench": "NODE_ENV=production node dist/index.js"
@@ -19,6 +20,7 @@
     "webpack": "^4.41.6"
   },
   "dependencies": {
+    "core-js": "^3.8.3",
     "node-stdev": "^1.0.1"
   }
 }

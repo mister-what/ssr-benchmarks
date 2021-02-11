@@ -1,10 +1,17 @@
 {
   "name": "vanilla-function",
+  "version": "1.0.0",
   "scripts": {
-    "build": "mkdir -p dist && cp index.js dist/index.js",
-    "bench": "NODE_ENV=production node dist/index.js"
+    "build": "NODE_ENV=production babel index.js -d dist",
+    "bench": "NODE_ENV=production benchwalk -n 'vanilla only' dist/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13"
   },
   "dependencies": {
-    "node-stdev": "^1.0.1"
+    "core-js": "^3.8.3",
+    "ssr-benchmark-runner": "1.0.0"
   }
 }
