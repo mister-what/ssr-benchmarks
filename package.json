@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "build": "yarn workspaces run build",
-    "benchwalk": "NODE_ENV=production benchwalk --suite-name 'ssr rendering' methods/react-ssr/dist/index.js methods/svelte-ssr/dist/index.js methods/vanilla-function/dist/index.js methods/vhtml/dist/index.js methods/vhtml-htm/dist/index.js",
+    "benchwalk": "yarn run benchwalk:run && yarn run csv2md",
+    "benchwalk:run": "NODE_ENV=production benchwalk --suite-name 'ssr rendering' methods/react-ssr/dist/index.js methods/svelte-ssr/dist/index.js methods/vanilla-function/dist/index.js methods/vhtml/dist/index.js methods/vhtml-htm/dist/index.js",
+    "csv2md": "csv2md -p results/benchmark-result.csv > result.md",
     "prettier": "prettier --write methods/**/*.{js,jsx,json}"
   },
   "keywords": [
@@ -18,9 +20,10 @@
   "author": "Jacky Efendi",
   "license": "MIT",
   "dependencies": {
-    "ssr-benchmark-runner": "1.0.0",
     "chalk": "^4.1.0",
-    "prettier": "2.2.1"
+    "csv2md": "^1.1.0",
+    "prettier": "2.2.1",
+    "ssr-benchmark-runner": "1.0.0"
   },
   "workspaces": [
     "./methods/*",
